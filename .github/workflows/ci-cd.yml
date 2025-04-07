@@ -54,7 +54,7 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_SSH_PUBLIC_KEY }}
-          source: "docker-compose.yml"
+          source: "./docker-compose.yml"
           target: "~/app"
 
       - name: Deploy to EC2
