@@ -1,7 +1,13 @@
 const express = require("express");
-//const cors = require("cors");
-
+const cors = require("cors");
 const app = express();
+
+// CORS configuration
+app.use(cors({
+  origin: ["http://localhost:4200", "http://localhost:4202"],
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type"]
+}));
 
 // parse requests of content-type - application/json
 app.use(express.json());
