@@ -84,15 +84,17 @@ jobs:
           host: ${{ secrets.EC2_HOST }}
           username: ${{ secrets.EC2_USERNAME }}
           key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
+          envs: DOCKER_HUB_USERNAME,DOCKER_HUB_TOKEN
+          environment: |
+            DOCKER_HUB_USERNAME=${{ secrets.DOCKER_HUB_USERNAME }}
+            DOCKER_HUB_TOKEN=${{ secrets.DOCKER_HUB_TOKEN }}
           script: |
             cd ~/app
-
-            # Create .env file with required variables
-            echo "DOCKER_HUB_USERNAME=$DOCKER_HUB_USERNAME" > .env
-
+            export DOCKER_HUB_USERNAME=${{ secrets.DOCKER_HUB_USERNAME }}
+            export DOCKER_HUB_TOKEN=${{ secrets.DOCKER_HUB_TOKEN }}
             # Login to Docker Hub
-            echo "$DOCKER_HUB_TOKEN" | docker login -u "$DOCKER_HUB_USERNAME" --password-stdin
+            echo "${{ secrets.DOCKER_HUB_TOKEN }}" | docker login -u "${{ secrets.DOCKER_HUB_USERNAME }}" --password-stdin
 
             # Pull and start containers
-            docker compose --env-file .env pull
-            docker compose --env-file .env up -d
+            DOCKER_HUB_USERNAME=${{ secrets.DOCKER_HUB_USERNAME }} docker compose pull
+            DOCKER_HUB_USERNAME=${{ secrets.DOCKER_HUB_USERNAME }} docker compose up -d
