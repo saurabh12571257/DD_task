@@ -4,7 +4,7 @@ const app = express();
 
 // CORS configuration
 app.use(cors({
-  origin: ["http://localhost:4200", "http://localhost:4202"],
+  origin: ["http://localhost:4200", "http://localhost:4202", "http://13.203.79.93", "http://13.203.79.93:80", "http://13.203.79.93:4202"],
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type"]
 }));
