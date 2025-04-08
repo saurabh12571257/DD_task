@@ -4,6 +4,8 @@ services:
     build:
       context: ./nginx
       dockerfile: Dockerfile
+      platforms:
+        - linux/amd64
     image: saurabhdave59/mean-crud-nginx:latest
     ports:
       - "80:80"
@@ -16,8 +18,9 @@ services:
   frontend:
     container_name: frontend
     image: saurabhdave59/mean-crud-frontend:latest
-    expose:
-      - "4202"
+    platform: linux/amd64
+    ports:
+      - "80:80"
     networks:
       - app-network
     depends_on:
@@ -26,8 +29,9 @@ services:
   backend:
     container_name: backend
     image: saurabhdave59/mean-crud-backend:latest
-    expose:
-      - "8080"
+    platform: linux/amd64
+    ports:
+      - "8080:8080"
     networks:
       - app-network
     depends_on:
@@ -38,6 +42,7 @@ services:
   mongodb:
     container_name: mongodb
     image: mongo:latest
+    platform: linux/amd64
     ports:
       - "27017:27017"
     networks:
