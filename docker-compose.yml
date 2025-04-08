@@ -1,11 +1,8 @@
 services:
   nginx:
     container_name: nginx
-    build:
-      context: ./nginx
-      dockerfile: Dockerfile
-    platform: FROM --platform=linux/amd64 node:11.15
     image: saurabhdave59/mean-crud-nginx:latest
+    platform: linux/amd64
     ports:
       - "80:80"
     networks:
@@ -13,7 +10,6 @@ services:
     depends_on:
       - frontend
       - backend
-
   frontend:
     container_name: frontend
     image: saurabhdave59/mean-crud-frontend:latest
