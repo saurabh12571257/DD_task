@@ -2,6 +2,14 @@
 
 This project is a full-stack CRUD (Create, Read, Update, Delete) application built using the MEAN stack (MongoDB, Express.js, Angular, Node.js) and containerized with Docker.
 
+<img width="1470" alt="Screenshot 2025-04-09 at 1 28 26 AM" src="https://github.com/user-attachments/assets/f207b717-ae14-44b9-afa5-672290921daa" />
+<img width="1146" alt="Screenshot 2025-04-09 at 1 27 11 AM" src="https://github.com/user-attachments/assets/8b9501f7-50be-46bf-ba1c-64b41deb41ab" />
+<img width="1470" alt="Screenshot 2025-04-09 at 1 26 17 AM" src="https://github.com/user-attachments/assets/32d45247-a7b1-44a3-ba1f-1d45d3df0f9f" />
+<img width="1470" alt="Screenshot 2025-04-09 at 1 25 44 AM" src="https://github.com/user-attachments/assets/50bd1145-3f1e-4486-904c-6eec2ad999bb" />
+<img width="1470" alt="Screenshot 2025-04-09 at 1 25 50 AM" src="https://github.com/user-attachments/assets/93bd39d2-96ba-405d-a3c1-ec9901d6b5ba" />
+
+
+
 ## Prerequisites
 
 - Node.js (v18 or later)
