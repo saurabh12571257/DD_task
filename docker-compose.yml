@@ -4,8 +4,7 @@ services:
     build:
       context: ./nginx
       dockerfile: Dockerfile
-      platforms:
-        - linux/amd64
+    platform: FROM --platform=linux/amd64 node:11.15
     image: saurabhdave59/mean-crud-nginx:latest
     ports:
       - "80:80"
@@ -21,6 +20,10 @@ services:
     platform: linux/amd64
     ports:
       - "4202:4202"
+    environment:
+      - PORT=4202
+    command:
+      ["sh", "-c", "ng serve --host 0.0.0.0 --port 4202 --disable-host-check"]
     networks:
       - app-network
     depends_on:
