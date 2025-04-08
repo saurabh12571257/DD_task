@@ -20,7 +20,7 @@ services:
     image: saurabhdave59/mean-crud-frontend:latest
     platform: linux/amd64
     ports:
-      - "80:80"
+      - "4202:4202"
     networks:
       - app-network
     depends_on:
